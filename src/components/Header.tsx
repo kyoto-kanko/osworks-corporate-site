@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import Image from "next/image";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -22,28 +23,29 @@ const components: { title: string; href: string; description: string }[] = [
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "革製品",
+    title: "マーキング",
     href: "/docs/primitives/hover-card",
     description:
       "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "トレーニングブース",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
 ];
 
 const Header = () => {
   return (
-    <div className="h-16 flex items-center justify-around">
-      <div className="text-2xl text-gray-900 dark:text-white">Osworks</div>
+    <header className="h-16 fixed top-0 left-0 right-0 flex items-center justify-around bg-white z-1000 shadow-md">
+      <a href="/">
+        <Image
+          src="/logo/logo.jpg"
+          alt="OSWORKS Logo"
+          width={100}
+          height={100}
+        />
+      </a>
       <div>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>OS-BASE</NavigationMenuTrigger>
+              <NavigationMenuTrigger>MENU</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                   {components.map((component) => (
@@ -61,14 +63,14 @@ const Header = () => {
             <NavigationMenuItem>
               <Link href="/docs" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  TAKE5
+                  RESERVATION
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-    </div>
+    </header>
   );
 };
 const ListItem = React.forwardRef<
