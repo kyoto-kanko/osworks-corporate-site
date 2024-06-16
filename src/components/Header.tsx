@@ -15,18 +15,14 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 
-const components: { title: string; href: string; description: string }[] = [
+const components: { title: string; href: string }[] = [
   {
     title: "修理・加工",
     href: "/repair",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
     title: "マーキング",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    href: "/marking",
   },
 ];
 
@@ -37,8 +33,9 @@ const Header = () => {
         <Image
           src="/logo/logo.jpg"
           alt="OSWORKS Logo"
-          width={100}
-          height={100}
+          className="w-24 h-8"
+          width={500}
+          height={500}
         />
       </a>
       <div>
@@ -47,15 +44,13 @@ const Header = () => {
             <NavigationMenuItem>
               <NavigationMenuTrigger>MENU</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                <ul className="grid w-[230px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                   {components.map((component) => (
                     <ListItem
                       key={component.title}
                       title={component.title}
                       href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
+                    ></ListItem>
                   ))}
                 </ul>
               </NavigationMenuContent>
@@ -89,9 +84,7 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground"></p>
         </a>
       </NavigationMenuLink>
     </li>

@@ -6,8 +6,6 @@ import {
   DrawerContent,
   DrawerDescription,
   DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
@@ -16,7 +14,7 @@ import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <footer className="justify-around bottom-0 w-full bg-white p-4">
+    <footer className="fixed bottom-0 left-0 right-0 z-50 w-full bg-white p-4">
       <div className="flex justify-around h-5 items-center space-x-4 text-sm">
         <div>
           <Drawer>

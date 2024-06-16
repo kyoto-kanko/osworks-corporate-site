@@ -54,23 +54,24 @@ const ComponentName = () => {
             </Table>
             <ScrollArea className="w-auto whitespace-nowrap rounded-md border">
               <div className="flex w-max space-x-4 p-4">
-                {works.map((artwork) => (
-                  <figure key={artwork.artist} className="shrink-0">
-                    <div className="overflow-hidden rounded-md">
-                      <Image
-                        src={artwork.art}
-                        alt={`Photo by ${artwork.artist}`}
-                        className="aspect-[3/4] h-fit w-fit object-cover"
-                        width={300}
-                        height={400}
-                      />
-                    </div>
-                    <figcaption className="pt-2 text-xs text-muted-foreground">
-                      Photo by{" "}
-                      <span className="font-semibold text-foreground">
-                        {artwork.artist}
-                      </span>
-                    </figcaption>
+                {globeAndMittPhotos.map((globeAndMittPhoto, index) => (
+                  <figure key={index} className="shrink-0">
+                    <a href={globeAndMittPhoto.href}>
+                      <div className="overflow-hidden rounded-md">
+                        <Image
+                          src={globeAndMittPhoto.art}
+                          alt={globeAndMittPhoto.description}
+                          className="h-fit w-fit object-cover"
+                          width={150}
+                          height={150}
+                        />
+                      </div>
+                      <figcaption className="pt-2 text-xs text-muted-foreground">
+                        <span className="font-semibold text-foreground">
+                          {globeAndMittPhoto.description}
+                        </span>
+                      </figcaption>
+                    </a>
                   </figure>
                 ))}
               </div>
@@ -97,23 +98,24 @@ const ComponentName = () => {
             </Table>
             <ScrollArea className="w-auto whitespace-nowrap rounded-md border">
               <div className="flex w-max space-x-4 p-4">
-                {works.map((artwork) => (
-                  <figure key={artwork.artist} className="shrink-0">
-                    <div className="overflow-hidden rounded-md">
-                      <Image
-                        src={artwork.art}
-                        alt={`Photo by ${artwork.artist}`}
-                        className="aspect-[3/4] h-fit w-fit object-cover"
-                        width={300}
-                        height={400}
-                      />
-                    </div>
-                    <figcaption className="pt-2 text-xs text-muted-foreground">
-                      Photo by{" "}
-                      <span className="font-semibold text-foreground">
-                        {artwork.artist}
-                      </span>
-                    </figcaption>
+                {shoesPhotos.map((shoesPhoto, index) => (
+                  <figure key={index} className="shrink-0">
+                    <a href={shoesPhoto.href}>
+                      <div className="overflow-hidden rounded-md">
+                        <Image
+                          src={shoesPhoto.art}
+                          alt={shoesPhoto.description}
+                          className="h-fit w-fit object-cover"
+                          width={150}
+                          height={150}
+                        />
+                      </div>
+                      <figcaption className="pt-2 text-xs text-muted-foreground">
+                        <span className="font-semibold text-foreground">
+                          {shoesPhoto.description}
+                        </span>
+                      </figcaption>
+                    </a>
                   </figure>
                 ))}
               </div>
@@ -256,59 +258,60 @@ const shoes: Repair[] = [
   },
 ];
 
-export interface Artwork {
-  artist: string;
+export interface Contents {
+  description: string;
   art: string;
+  href: string;
 }
 
-export const works: Artwork[] = [
+export const globeAndMittPhotos: Contents[] = [
   {
-    artist: "Ornella Binni",
-    art: "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80",
+    description: "詳細はこちら",
+    art: "/repair/grove-mitt/grove1.jpg",
+    href: "https://www.instagram.com/p/C8HZzzWPEk-/?igsh=MWg0OGxiYWlvZHhvaA==",
   },
   {
-    artist: "Tom Byrom",
-    art: "https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80",
+    description: "詳細はこちら",
+    art: "/repair/grove-mitt/grove2.jpg",
+    href: "https://www.instagram.com/p/C7WjWM1vXIM/?igsh=cXd0ZjIzcDlvejNk",
   },
   {
-    artist: "Vladimir Malyavko",
-    art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80",
+    description: "詳細はこちら",
+    art: "/repair/grove-mitt/grove3.jpg",
+    href: "https://www.instagram.com/p/C5neQcAvLrf/?igsh=cjgza2U3NXdwanNi",
   },
   {
-    artist: "Ornella Binni",
-    art: "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80",
+    description: "詳細はこちら",
+    art: "/repair/grove-mitt/grove4.jpg",
+    href: "https://www.instagram.com/p/C2MgZLavYmg/?igsh=MWZ2OWI2bmhhcmdyYw==",
   },
   {
-    artist: "Tom Byrom",
-    art: "https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80",
+    description: "詳細はこちら",
+    art: "/repair/grove-mitt/grove5.jpg",
+    href: "https://www.instagram.com/p/C7rM16Dv2Cx/?igsh=ZjIzbngxM3NrcjNs",
+  },
+];
+
+export const shoesPhotos: Contents[] = [
+  {
+    description: "詳細はこちら",
+    art: "/repair/shoes/shoes1.jpg",
+    href: "https://www.instagram.com/p/C7wGnIHvW93/?igsh=dWQ3dDMweDkyOWYw",
   },
   {
-    artist: "Vladimir Malyavko",
-    art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80",
+    description: "詳細はこちら",
+    art: "/repair/shoes/shoes2.jpg",
+    href: "https://www.instagram.com/p/C7gtJ4vvMCk/?igsh=emNsdHpkc2JvOTZo",
   },
   {
-    artist: "Ornella Binni",
-    art: "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80",
+    description: "詳細はこちら",
+    art: "/repair/shoes/shoes3.jpg",
+    href: "https://www.instagram.com/p/C3DEbXMvrjp/?igsh=MWpxc2dtZXkxdmdzOA==",
   },
   {
-    artist: "Tom Byrom",
-    art: "https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Vladimir Malyavko",
-    art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Ornella Binni",
-    art: "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Tom Byrom",
-    art: "https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Vladimir Malyavko",
-    art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80",
+    description: "詳細はこちら",
+    art: "/repair/shoes/shoes4.jpg",
+    href: "https://www.instagram.com/p/C2kEoPoPfZn/?igsh=MXZuNjNjN2RobzM1eQ==",
   },
 ];
 
