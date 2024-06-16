@@ -28,12 +28,12 @@ const components: { title: string; href: string }[] = [
 
 const Header = () => {
   return (
-    <header className="h-16 fixed top-0 left-0 right-0 flex items-center justify-around bg-white z-1000 shadow-md">
+    <header className="h-16 fixed top-0 left-0 right-0 flex items-center justify-around bg-white shadow-md">
       <a href="/">
         <Image
           src="/logo/logo.jpg"
           alt="OSWORKS Logo"
-          className="w-24 h-8"
+          className="w-32 h-8"
           width={500}
           height={500}
         />
