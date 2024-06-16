@@ -40,7 +40,7 @@ const Home: React.FC = () => {
       setIsSmallScreen(window.innerWidth < 640);
     };
 
-    handleResize(); // 初回レンダリング時のチェック
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -65,21 +65,15 @@ const Home: React.FC = () => {
       ))}
       <div className="absolute inset-0 flex items-center justify-center sm:hidden">
         <div className="text-center space-y-16 w-3/4">
-          <div className="border border-white py-2 px-4">
-            <a href="/repair" className="text-white text-xl">
-              REPAIR
-            </a>
-          </div>
-          <div className="border border-white py-2 px-4">
-            <a href="/marking" className="text-white text-xl">
-              MARKING
-            </a>
-          </div>
-          <div className="border border-white py-2 px-4">
-            <a href="/shop" className="text-white text-xl">
-              NEWS
-            </a>
-          </div>
+          <a href="/repair" className="block border border-white py-2 px-4">
+            <div className="text-white text-xl">REPAIR</div>
+          </a>
+          <a href="/marking" className="block border border-white py-2 px-4">
+            <div className="text-white text-xl">MARKING</div>
+          </a>
+          <a href="/news" className="block border border-white py-2 px-4">
+            <div className="text-white text-xl">NEWS</div>
+          </a>
         </div>
       </div>
     </div>

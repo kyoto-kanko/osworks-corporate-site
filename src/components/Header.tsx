@@ -56,7 +56,7 @@ const Header = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
+              <Link href="https://lin.ee/1ev9Xy5" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   RESERVATION
                 </NavigationMenuLink>
