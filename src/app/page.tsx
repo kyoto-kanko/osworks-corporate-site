@@ -72,8 +72,8 @@ const Home: React.FC = () => {
           <a href="/marking" className="block border border-white py-2 px-4">
             <div className="text-white text-xl">MARKING</div>
           </a>
-          <a href="/news" className="block border border-white py-2 px-4">
-            <div className="text-white text-xl">NEWS</div>
+          <a href="https://www.rakuten.co.jp/os-works/" className="block border border-white py-2 px-4">
+            <div className="text-white text-xl">SHOP</div>
           </a>
 
           <a href="https://lin.ee/1ev9Xy5" className="flex justify-center">
