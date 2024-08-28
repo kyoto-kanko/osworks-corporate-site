@@ -10,21 +10,6 @@ const smImages: string[] = [
   "top/sm/IMG_9166.png",
 ];
 
-const lgImages: string[] = [
-  "top/lg/IMG_5031.png",
-  "top/lg/IMG_5059.png",
-  "top/lg/IMG_5192.png",
-  "top/lg/IMG_5408.png",
-  "top/lg/IMG_9166.png",
-];
-
-const preloadImages = (imageArray: string[]) => {
-  imageArray.forEach((image) => {
-    const img = new window.Image();
-    img.src = image;
-  });
-};
-
 const Home: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
@@ -47,15 +32,9 @@ const Home: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const images = isSmallScreen ? smImages : lgImages;
-
-  useEffect(() => {
-    preloadImages(images);
-  }, [images]);
-
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {images.map((image, index) => (
+      {smImages.map((image, index) => (
         <div
           key={index}
           className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ${
@@ -72,7 +51,10 @@ const Home: React.FC = () => {
           <a href="/marking" className="block border border-white py-2 px-4">
             <div className="text-white text-xl">MARKING</div>
           </a>
-          <a href="https://www.rakuten.co.jp/os-works/" className="block border border-white py-2 px-4">
+          <a
+            href="https://www.rakuten.co.jp/os-works/"
+            className="block border border-white py-2 px-4"
+          >
             <div className="text-white text-xl">SHOP</div>
           </a>
 
