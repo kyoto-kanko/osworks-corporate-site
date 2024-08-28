@@ -129,7 +129,7 @@ const ComponentName = () => {
   );
 };
 
-export interface Repair {
+interface Repair {
   title: string;
   about: string;
   price: string;
@@ -259,13 +259,13 @@ const shoes: Repair[] = [
   },
 ];
 
-export interface Contents {
+interface Contents {
   description: string;
   art: string;
   href: string;
 }
 
-export const globeAndMittPhotos: Contents[] = [
+const globeAndMittPhotos: Contents[] = [
   {
     description: "詳細はこちら",
     art: "/repair/grove-mitt/grove1.jpg",
@@ -293,7 +293,7 @@ export const globeAndMittPhotos: Contents[] = [
   },
 ];
 
-export const shoesPhotos: Contents[] = [
+const shoesPhotos: Contents[] = [
   {
     description: "詳細はこちら",
     art: "/repair/shoes/shoes1.jpg",
