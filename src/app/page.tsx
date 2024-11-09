@@ -51,10 +51,7 @@ const Home: React.FC = () => {
           <a href="/marking" className="block border border-white py-2 px-4">
             <div className="text-white text-xl">MARKING</div>
           </a>
-          <a
-            href="https://www.rakuten.co.jp/os-works/"
-            className="block border border-white py-2 px-4"
-          >
+          <a href="/shop" className="block border border-white py-2 px-4">
             <div className="text-white text-xl">SHOP</div>
           </a>
 
